@@ -13,14 +13,15 @@ const getProductsById = async (req, res) => {
   return res.status(200).json(message);
 };
 
-// const insertProduct = async (req, res) => {
-//   const { name } = req.body;
-//   const { type, message } = await productService.insertProducts(name);
-//   if (type) return res.status(200).json(message);
-// };
+const insertProduct = async (req, res) => {
+  const { name } = req.body;
+  const { type, message } = await productService.insertProducts(name);
+  if (type) return res.status(500).json({ message: 'Internal Error' });
+  return res.status(201).json(message);
+};
 
 module.exports = {
   getProducts,
   getProductsById,
-  // insertProduct,
+  insertProduct,
 };

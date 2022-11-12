@@ -14,15 +14,22 @@ const getProductsById = async (id) => {
   return result;
 };
 
-// const insertProducts = async (item) => {
-//   const [{ result }] = await connection.execute(
-//     'INSERT INTO StoreManager.products(item) VALUES(?)', item,
-//   );
-//   return result;
-// };
+const getProductsByName = async (name) => {
+  const query = 'SELECT * FROM StoreManager.products WHERE name = ?';
+  const [[result]] = await connection.execute(query, [name]);
+  return result;
+};
+
+const insertProducts = async (item) => {
+  const insert = 'INSERT INTO StoreManager.products (name) VALUES (?)';
+  await connection.execute(insert, [item]);
+  const result = await getProductsByName(item);
+  return result;
+};
 
 module.exports = {
   getProducts,
   getProductsById,
-  // insertProducts,
+  insertProducts,
+  getProductsByName,
 };
