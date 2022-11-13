@@ -14,22 +14,16 @@ const getProductsById = async (id) => {
   return result;
 };
 
-const getProductsByName = async (name) => {
-  const query = 'SELECT * FROM StoreManager.products WHERE name = ?';
-  const [[result]] = await connection.execute(query, [name]);
-  return result;
-};
+// Refatorando as funções na camada Model pra simplificar, deixando uma função só
 
 const insertProducts = async (item) => {
-  const insert = 'INSERT INTO StoreManager.products (name) VALUES (?)';
-  await connection.execute(insert, [item]);
-  const result = await getProductsByName(item);
-  return result;
+  const [{ insertId }] = await connection.execute('INSERT INTO products (name) VALUES (?)', [item]);
+
+  return { id: insertId };
 };
 
 module.exports = {
   getProducts,
   getProductsById,
   insertProducts,
-  getProductsByName,
 };

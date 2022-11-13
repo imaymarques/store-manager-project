@@ -11,10 +11,9 @@ const getAllProductsById = async (id) => {
   return { type: null, message: result };
 };
 
-const insertProducts = async (product) => {
-  const result = await productModel.insertProducts(product);
-  if (!result) return { type: 'INTERNA<_ERROR', message: 'Internal Error' };
-  return { type: null, message: result };
+const insertProducts = async (name) => {
+  const { id } = await productModel.insertProducts(name);
+  return { type: 201, message: { id, name } };
 };
 
 module.exports = {
