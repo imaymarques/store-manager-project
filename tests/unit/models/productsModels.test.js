@@ -24,9 +24,9 @@ describe('Verifica a camada Model', () => {
   });
   // describe('Verifica a função insertProducts', () => {
   //   it('Verifica se adiciona produtos', async () => {
-  //     sinon.stub(connection, 'execute').resolves([productsModelMock.product]);
-  //     const result = await productModel.insertProducts('Capa da Feiticeira Escarlate');
-  //     expect(result).to.be.deep.equal(productsModelMock.product);
+  //     sinon.stub(connection, 'execute').resolves([productsModelMock.productId]);
+  //     const result = await productModel.insertProducts(productsModelMock.product);
+  //     expect(result).to.be.deep.equal(productsModelMock.allProducts);
   //   });
   // });
 });
