@@ -17,7 +17,9 @@ const getProductsById = async (id) => {
 // Refatorando as funções na camada Model pra simplificar, deixando uma função só
 
 const insertProducts = async (item) => {
-  const [{ insertId }] = await connection.execute('INSERT INTO products (name) VALUES (?)', [item]);
+  const [{ insertId }] = await connection.execute(
+    'INSERT INTO StoreManager.products (name) VALUE (?)', [item],
+);
 
   return { id: insertId };
 };

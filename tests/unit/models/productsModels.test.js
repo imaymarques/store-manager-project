@@ -1,23 +1,32 @@
-// const chai = require('chai');
 const { expect } = require('chai');
 const sinon = require('sinon');
 const connection = require('../../../src/conection');
 const productsModelMock = require('./productsModels.mock');
 const productModel = require('../../../src/models/product.model');
+const { execute } = require('../../../src/conection');
 
 describe('Verifica a camada Model', () => {
-  afterEach = () => {
-    sinon.restore();
-  };
+  afterEach(function () { sinon.restore() });
 
-  it('Verifica se retorna todos os produtos', async () => {
-    sinon.stub(connection, 'execute').resolves([productsModelMock]);
-    const result = await productModel.getProducts();
-    expect(result).to.be.deep.equal(productsModelMock);
+  describe('Verifica a função getProducts', () => {
+    it('Verifica se retorna todos os produtos', async () => {
+      sinon.stub(connection, 'execute').resolves([productsModelMock.allProducts]);
+      const result = await productModel.getProducts();
+      expect(result).to.be.deep.equal(productsModelMock.allProducts);
+    });
   });
-  it('Verifica se retorna um produto pelo Id', async () => {
-    sinon.stub(connection, 'execute').resolves([[productsModelMock]]);
-    const result = await productModel.getProductsById(1);
-    expect(result).to.be.deep.equal(productsModelMock);
+  describe('Verifica a função getProductsById', () => {
+    it('Verifica se retorna um produto pelo Id', async () => {
+      sinon.stub(connection, 'execute').resolves([[productsModelMock.id]]);
+      const result = await productModel.getProductsById(1);
+      expect(result).to.be.deep.equal(productsModelMock.id);
+    });
   });
+  // describe('Verifica a função insertProducts', () => {
+  //   it('Verifica se adiciona produtos', async () => {
+  //     sinon.stub(connection, 'execute').resolves([productsModelMock.product]);
+  //     const result = await productModel.insertProducts('Capa da Feiticeira Escarlate');
+  //     expect(result).to.be.deep.equal(productsModelMock.product);
+  //   });
+  // });
 });

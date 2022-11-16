@@ -1,4 +1,4 @@
-const productsControllerMock = [
+const products = [
   {
     "id": 1,
     "name": "Martelo de Thor"
@@ -13,13 +13,12 @@ const productsControllerMock = [
   }
 ];
 
-const productsControllerByIdMock = {
-  "id": 3,
-  "name": "Escudo do Capitão América"
-};
+const newProduct = {
+  "name": "Capa da Feiticeira Escarlate"
+}
 
 
 module.exports = {
-  productsControllerMock,
-  productsControllerByIdMock,
+  products,
+  newProduct,
 };

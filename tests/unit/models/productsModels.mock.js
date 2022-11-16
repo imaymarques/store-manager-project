@@ -1,4 +1,4 @@
-const productsModelMock = [
+const allProducts = [
   {
     "id": 1,
     "name": "Martelo de Thor"
@@ -13,4 +13,13 @@ const productsModelMock = [
   }
 ]
 
-module.exports = productsModelMock;
+const id = {
+  "id": 1,
+  "name": "Martelo de Thor"
+}
+
+const product = {
+  "name": "Capa da Feiticeira Escarlate"
+}
+
+module.exports = { allProducts, id, product };

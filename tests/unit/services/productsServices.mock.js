@@ -1,4 +1,4 @@
-const productsServiceMock = [
+const products = [
   {
     "id": 1,
     "name": "Martelo de Thor"
@@ -13,13 +13,13 @@ const productsServiceMock = [
   }
 ];
 
-const productsServiceByIdMock = {
-  "id": 2,
-  "name": "Traje de encolhimento"
-};
+const newProduct = {
+  "id": 4,
+  "name": "Capa da Feiticeira Escarlate"
+}
 
 
 module.exports = {
-  productsServiceMock,
-  productsServiceByIdMock,
+  products,
+  newProduct
 };
