@@ -3,7 +3,6 @@ const sinon = require('sinon');
 const connection = require('../../../src/conection');
 const productsModelMock = require('./productsModels.mock');
 const productModel = require('../../../src/models/product.model');
-const { execute } = require('../../../src/conection');
 
 describe('Verifica a camada Model', () => {
   afterEach(function () { sinon.restore() });
