@@ -18,12 +18,6 @@ const id = {
   "name": "Martelo de Thor"
 }
 
-const productId = {
-  "id": 4,
-}
+const newProduct = "Capa da Feiticeira Escarlate"
 
-const product = {
-  "name": "Capa da Feiticeira Escarlate"
-}
-
-module.exports = { allProducts, id, product, productId };
+module.exports = { allProducts, id, newProduct };

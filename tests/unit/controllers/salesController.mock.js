@@ -17,8 +17,30 @@ const allSales = [
     "productId": 3,
     "quantity": 15
   }
+];
+
+// id 1
+const idSales = [
+  {
+    "date": "2022-11-17T21:55:10.000Z",
+    "productId": 2,
+    "quantity": 10
+  }
+];
+
+const insertSales = [
+  {
+    "productId": 1,
+    "quantity": 1
+  },
+  {
+    "productId": 2,
+    "quantity": 5
+  }
 ]
 
 module.exports = {
   allSales,
+  idSales,
+  insertSales,
 };

@@ -21,11 +21,12 @@ describe('Verifica a camada Model', () => {
       expect(result).to.be.deep.equal(productsModelMock.id);
     });
   });
-  // describe('Verifica a função insertProducts', () => {
-  //   it('Verifica se adiciona produtos', async () => {
-  //     sinon.stub(connection, 'execute').resolves([productsModelMock.productId]);
-  //     const result = await productModel.insertProducts(productsModelMock.product);
-  //     expect(result).to.be.deep.equal(productsModelMock.allProducts);
-  //   });
-  // });
+  describe('Verifica a função insertProducts', () => {
+    it('Verifica se adiciona produtos', async () => {
+      sinon.stub(connection, 'execute').resolves([{ insertId: 4 }])
+      const result = await productModel.insertProducts(productsModelMock.newProduct);
+
+      expect(result).to.deep.equal({ id: 4 });
+    });
+  });
 });

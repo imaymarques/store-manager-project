@@ -6,8 +6,6 @@ const productService = require('../../../src/services/product.service');
 
 const idInvalido = 55;
 const idValido = 3;
-const insertId = 4;
-const inserName = 'Capa da Feiticeira Escarlate';
 
 describe('Verifica a camada Service', () => {
   afterEach(function () { sinon.restore() });
@@ -31,11 +29,4 @@ describe('Verifica a camada Service', () => {
       expect(response).to.be.deep.equal({ type: 404, message: 'Product not found' });
     });
   });
-  // describe('Verifica a função insertProducts', () => {
-  //   it('Verifica se é possível inserir produtos', async () => {
-  //     sinon.stub(productModel, 'insertProducts').resolves(undefined);
-  //     const response = await productService.insertProducts(productsServiceMock.newProduct);
-  //     expect(response).to.be.deep.equal({ type: 201, message: { id: insertId, name: inserName } });
-  //   });
-  // });
 });

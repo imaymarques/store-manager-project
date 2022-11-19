@@ -36,4 +36,42 @@ describe('Verifica a camda Controller', () => {
       expect(res.json).to.have.been.calledWith('Sale not found');
     });
   });
+  describe('Verifica a função getSalesById', () => {
+    it('Verifica se retorna uma venda pelo id', async () => {
+      const req = {
+        params: 1,
+      };
+      const res = {};
+
+      res.status = sinon.stub().returns(res);
+      res.json = sinon.stub().returns();
+      sinon.stub(salesService, 'getSalesById').resolves({ type: null, message: mock.idSales });
+      await salesController.getSalesById(req, res);
+      expect(res.status).to.have.been.calledWith(200);
+    });
+    it('Verifica mensagem de erro ao colocar id errado', async () => {
+      const req = {
+        params: 54454
+      };
+      const res = {};
+
+      res.status = sinon.stub().returns(res);
+      res.json = sinon.stub().returns();
+      sinon.stub(salesService, 'getSalesById').resolves({ type: 404, message: 'Sale not found' });
+      await salesController.getSalesById(req, res);
+      expect(res.status).to.have.been.calledWith(404);
+    });
+  });
+  describe('Verifica a função insertSalesOfProducts', () => {
+    it('Verifica se é possível inserir uma venda', async () => {
+      const req = {};
+      const res = {};
+
+      res.status = sinon.stub().returns(res);
+      res.json = sinon.stub().returns();
+      sinon.stub(salesService, 'insertSale').resolves({ type: 201, message: mock.insertSales });
+      await salesController.insertSalesOfProducts(req, res);
+      expect(res.status).to.have.been.calledWith(201);
+    });
+  });
 });
