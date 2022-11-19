@@ -29,7 +29,15 @@ const salesById = [
   }
 ];
 
+const newSale = [
+  {
+    "productId": 3,
+    "quantity": 2
+  }
+];
+
 module.exports = {
   salesModel,
   salesById,
+  newSale,
 };

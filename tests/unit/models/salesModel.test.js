@@ -20,4 +20,20 @@ describe('Verifica a camada Model', () => {
       expect(result).to.be.deep.equal(mock.salesById);
     });
   });
+  describe('Verifica a função insertSales', () => {
+    it('Verifica se insere uma nova venda', async () => {
+      sinon.stub(connection, 'execute').resolves([mock.newSale]);
+      const result = await salesModel.getSalesById(1);
+      expect(result).to.be.deep.equal(mock.newSale);
+    });
+  });
+  describe('Verifica a função deleteSale', () => {
+    it('Verifica se deleta uma venda', async () => {
+      sinon.stub(connection, 'execute').resolves([]);
+
+      const id = 1;
+
+      await salesModel.deleteSale(id);
+    });
+  });
 });
