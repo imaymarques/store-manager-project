@@ -1,13 +1,12 @@
-<b>Store Manager Project</b>
+# Store Manager Project
 
 Este é um projeto de gerenciamento de loja construído com Node.js, Arquitetura de Software com o MSC, testes unitários e o MySQL como banco de dados. O aplicativo permite que os usuários gerenciem os produtos e as vendas de uma loja, visualizando, adicionando, editando e removendo produtos e vendas.
 
-<b>Como funciona</b>
+## Como funciona
 
 O aplicativo é construído com Node.js e utiliza o banco de dados MySQL para armazenar os dados dos produtos e vendas. Além disso, o aplicativo possui uma API RESTful para interagir com os usuários.
 
-<b>Gerenciando Vendas</b>
-Os usuários podem gerenciar as categorias da loja usando os seguintes comandos:
+## Gerenciando Vendas
 
 Na aplicação, será possível realizar as seguintes ações:
 
@@ -21,7 +20,7 @@ Na aplicação, será possível realizar as seguintes ações:
 
 --> <i>DELETE /sales/:id</i>: Remover uma venda.
 
-<b>Gerenciando produtos</b>
+## Gerenciando produtos
 
 Na aplicação, será possível realizar as seguintes ações:
 
@@ -35,22 +34,21 @@ Na aplicação, será possível realizar as seguintes ações:
 
 --> <i>DELETE /products/:id</i>: Remover um produto da loja.
 
-<b>Conclusão</b>
+## Conclusão
 
 Este projeto de gerenciamento de loja é um exemplo simples de como o Node.js, o MySQL e uma API RESTful podem ser usados juntos para criar um aplicativo funcional e escalável. O uso da API torna fácil interagir com o aplicativo e gerenciar os dados da loja.
 
 _________________________________________________________________________________________________________________________________________________________
 
-<b>Store Manager Project</b>
+# Store Manager Project
 
 This is a store management project built with Node.js, Software Architecture with MSC, unit tests and MySQL as database. The app allows users to manage a store's products and sales by viewing, adding, editing and removing products and sales.
 
-<b>How it works</b>
+## How it works
 
 The application is built with Node.js and uses the MySQL database to store product and sales data. Furthermore, the app has a RESTful API to interact with users.
 
-<b>Managing Sales</b>
-Users can manage store categories using the following commands:
+## Managing Sales
 
 In the application, you can perform the following actions:
 
@@ -64,7 +62,7 @@ In the application, you can perform the following actions:
 
 --> <i>DELETE /sales/:id</i>: Remove a sale.
 
-<b>Managing products</b>
+## Managing products
 
 In the application, you can perform the following actions:
 
@@ -78,6 +76,6 @@ In the application, you can perform the following actions:
 
 --> <i>DELETE /products/:id</i>: Remove a product from the store.
 
-<b>Conclusion</b>
+## Conclusion
 
 This store management project is a simple example of how Node.js, MySQL and a RESTful API can be used together to create a functional and scalable application. Using the API makes it easy to interact with the app and manage store data.
